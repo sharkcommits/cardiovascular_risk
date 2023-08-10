@@ -4,12 +4,12 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import SGDClassifier
-from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import confusion_matrix, classification_report
 from imblearn.over_sampling import SMOTE
-from xgboost import XGBClassifier, plot_tree
+from xgboost import XGBClassifier
 
 data = pd.read_csv('CVD_cleaned.csv')
 
