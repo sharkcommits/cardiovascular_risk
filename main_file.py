@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.linear_model import SGDClassifier
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV, KFold, cross_val_score, StratifiedKFold
 from sklearn.metrics import confusion_matrix, classification_report
 from imblearn.over_sampling import SMOTE
 from xgboost import XGBClassifier
@@ -71,7 +71,7 @@ smote = SMOTE(sampling_strategy='minority')
 #X_sy and y_sy are our new final form of data and THEY'RE BALANCED.
 X_sy, y_sy = smote.fit_resample(x, y)
 """
-This part is just future GridSearchCV usage.
+This part is just for GridSearchCV usage.
 
 params = [{"loss": ['log_loss', 'hinge']},
           {"penalty": ['elasticnet']},
@@ -83,14 +83,26 @@ X_train, X_test, y_train, y_test = train_test_split(X_sy, y_sy, test_size=0.2, r
 
 xgb = XGBClassifier()
 
-"""
-SGD part. It'll be added.
-train_sgd = SGDClassifier(loss='log_loss', penalty='elasticnet', max_iter=2000)
-"""
+"Using KFold with our populated data."
+kfold = KFold(n_splits=10)
+results = cross_val_score(xgb, X_sy, y_sy, cv=kfold)
+print("Accuracy(with SMOTE and 10K-Fold): ", results.mean())
 
-xgb_fit = xgb.fit(X_train, y_train)
-y_pred = xgb_fit.predict(X_test)
+"Using Stratified K-Fold with our imbalanced data, no SMOTE."
 
-#Then we get our final results.
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+skfold = StratifiedKFold(n_splits=10)
+res = cross_val_score(xgb, x, y, cv=skfold)
+print("Accuracy(with Stratified 10K-Fold): ", res.mean())
+
+
+
+
+
+
+
+
+
+
+
+
+
