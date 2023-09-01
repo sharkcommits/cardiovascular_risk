@@ -4,11 +4,11 @@ This model aims to predict a person's cardiovascular risk based on given feature
 
 ## Table of Contents
 
-- Installation
-- Motivation behind the Project
-- File Description
-- Results
-- Licensing, Authors, Acknowledgements
+- [Installation](#a-id-installation-installation)
+- [Motivation behind the Project](#motivation-behind-the-project)
+- [File Description](#file-description)
+- [Results](#results)
+- [Licensing, Authors, Acknowledgements](#licensing-authors-and-acknowledgements)
 
 ## Installation
 
