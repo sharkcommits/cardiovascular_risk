@@ -1,6 +1,6 @@
 # Cardiovascular Risk Prediction Model
 
-### This model aims to predict a person's cardiovascular risk based on given features such as BMI, Smoking History, Age Category, Fruit Consumption etc.
+This model aims to predict a person's cardiovascular risk based on given features such as BMI, Smoking History, Age Category, Fruit Consumption etc.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ We're gonna compare the results and decide which one to go.
 ## File Description
 
 This project includes one Jupyter Notebook with all code required for analyzing the data and creating a supervised 
-machine learning algorith. The csv file containes 308854 people along with the following features:
+machine learning algorithm. The csv file containes 308854 people along with the following features:
 
 - General_Health (Condition)
 - Checkup (within years)
