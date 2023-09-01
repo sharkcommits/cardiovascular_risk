@@ -30,7 +30,7 @@ We're gonna compare the results and decide which one to go.
 ## File Description
 
 This project includes one Jupyter Notebook with all code required for analyzing the data and creating a supervised 
-machine learning algorithm. The csv file containes 308854 people along with the following features:
+machine learning algorithm. The csv file contains 308854 people along with the following features:
 
 - General_Health (Condition)
 - Checkup (within years)
@@ -53,7 +53,7 @@ machine learning algorithm. The csv file containes 308854 people along with the 
 
 ## Results
 
-We get **94.57%** accuracy by using SMOTE and 10K-Fold and **91.91%** by using Stratified 10K-Fold.
+We get **94.89%** accuracy by using SMOTE and 10K-Fold and **91.90%** by using Stratified 10K-Fold.
 
 ## Licensing, Authors and Acknowledgements
 
